@@ -4,14 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 
+val TAG =":::"
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var programmer1 = programmerData("Jorge",24,"Java")
-        val prog = programador(programmer1)
-        prog.getProgrammerData()
-        Log.d(":::::", prog.getProgrammerData().toString())
+        var p1 = programador(programmerData("Jorge",24,"Java"))
+        val pData = p1.getProgrammerData()
+        Log.d(TAG, pData.toString())
+        Log.d(TAG,"Hola soy ${pData.name} tengo ${pData.age} años, soy experto en ${pData.language}" )
     }
 
     class programador(private val data:programmerData) :programadorInterface{
